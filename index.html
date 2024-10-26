@@ -21,76 +21,129 @@
           <h1 class="name" title="Shikhar Srivastava">Shikhar Srivastava</h1>
           <p class="title">Data Science Honours Student</p>
         </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
         <ul class="contacts-list">
           <li class="contact-item">
             <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
-            <div class="contact-info"><p>Email</p><a href="mailto:ssriva25@uwo.ca">ssriva25@uwo.ca</a></div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box"><ion-icon name="school-outline"></ion-icon></div>
-            <div class="contact-info"><p>Education</p><address>Western University</address></div>
+            <div class="contact-info"><p class="contact-title">Email</p><a href="mailto:ssriva25@uwo.ca">ssriva25@uwo.ca</a></div>
           </li>
           <li class="contact-item">
             <div class="icon-box"><ion-icon name="calendar-outline"></ion-icon></div>
-            <div class="contact-info"><p>Program</p><address>BSc. Honors in Data Science</address></div>
+            <div class="contact-info"><p class="contact-title">Program</p><time>Honours Specialization in Data Science</time></div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="contact-info"><p class="contact-title">School</p><address>Western University</address></div>
           </li>
         </ul>
+        <div class="separator"></div>
         <ul class="social-list">
-          <li><a href="https://www.linkedin.com/in/shikhar0srivastava" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-          <li><a href="https://github.com/ShikharSrivastava-aiml" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/shikhar0srivastava" target="_blank" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://github.com/ShikharSrivastava-aiml" target="_blank" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
         </ul>
       </div>
     </aside>
 
     <div class="main-content">
       <nav class="navbar">
-        <ul>
-          <li><button class="navbar-link active" data-nav-link>About</button></li>
-          <li><button class="navbar-link" data-nav-link>Resume</button></li>
-          <li><button class="navbar-link" data-nav-link>Projects</button></li>
+        <ul class="navbar-list">
+          <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link" data-nav-link>Projects</button></li>
         </ul>
       </nav>
 
-      <article class="about active">
-        <header><h2>About Me</h2></header>
-        <p>I am Shikhar Srivastava, a data science student with experience in machine learning and data analysis, pursuing impactful projects with hands-on programming and problem-solving skills.</p>
-      </article>
-
-      <article class="resume">
-        <header><h2>Resume</h2></header>
-
-        <section class="timeline">
-          <h3>Education</h3>
-          <div><h4>Western University</h4><span>2021-2025</span><p>BSc. Honors in Data Science (GPA: 3.4/4.0)</p></div>
-        </section>
-
-        <section class="timeline">
-          <h3>Experience</h3>
-          <div>
-            <h4>Machine Learning Intern, CARFAX</h4><span>May 2024 - Dec 2024</span>
-            <p>Optimized NLP models and researched LLM efficiency, achieving a 5x cost reduction.</p>
-          </div>
-          <div>
-            <h4>Research Student, Human Analysis Environment Lab</h4><span>Oct 2023 - Aug 2024</span>
-            <p>Developed a transformer-based LSTM model for transport prediction using GPS data.</p>
-          </div>
+      <article class="about active" data-page="about">
+        <header><h2 class="h2 article-title">About Me</h2></header>
+        <section class="about-text">
+          <p>I am Shikhar Srivastava, a Data Science Honours student at Western University, specializing in machine learning and data analysis. My experience spans various roles, including machine learning research and industry applications.</p>
         </section>
       </article>
 
-      <article class="projects">
-        <header><h2>Projects</h2></header>
-        <ul>
-          <li>
-            <h3>Twitter Analytical Project</h3>
-            <p>Sentiment analysis with 85% accuracy for real-time Twitter insights using NLP.</p>
+      <article class="resume" data-page="resume">
+        <header><h2 class="h2 article-title">Resume</h2></header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Western University</h4>
+              <span>2021-2025</span>
+              <p class="timeline-text">BSc. Honors Specialization in Data Science (GPA: 3.4/4.0)</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+            <h3 class="h3">Experience</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Machine Learning Intern, CARFAX</h4>
+              <span>May 2024 - Dec 2024</span>
+              <p class="timeline-text">Enhanced BERT-based models, saving 5x in costs by transitioning to BigBird models and achieving higher model efficiency through continual learning techniques.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Research Student, Human Analysis Environment Lab</h4>
+              <span>Oct 2023 - Aug 2024</span>
+              <p class="timeline-text">Developed an LSTM-based model to predict transport modes using GPS data, collaborating on data analysis projects with professors in sociology and geology.</p>
+            </li>
+          </ol>
+        </section>
+      </article>
+
+      <article class="portfolio" data-page="portfolio">
+        <header><h2 class="h2 article-title">Projects</h2></header>
+        <ul class="project-list">
+          <li class="project-item active" data-filter-item data-category="data science">
+            <a href="https://github.com/ShikharSrivastava-aiml" target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <img src="./assets/images/project-1.jpg" alt="Twitter Analytical Project" loading="lazy">
+              </figure>
+              <h3 class="project-title">Twitter Analytical Project</h3>
+              <p class="project-category">Real-time sentiment analysis for Twitter, achieving 85% accuracy in sentiment classification.</p>
+            </a>
           </li>
-          <li>
-            <h3>Car Accident Detection</h3>
-            <p>Implemented an image classification model to detect car damage, outperforming CNN ResNet by 11%.</p>
+          <li class="project-item active" data-filter-item data-category="machine learning">
+            <a href="https://github.com/ShikharSrivastava-aiml" target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <img src="./assets/images/project-2.jpg" alt="Car Accident Detection" loading="lazy">
+              </figure>
+              <h3 class="project-title">Car Accident Detection</h3>
+              <p class="project-category">Developed a model to detect car damage with 98% accuracy, outperforming traditional CNN methods by 11%.</p>
+            </a>
           </li>
-          <li>
-            <h3>Insurance Fraud Detection</h3>
-            <p>RUSBoost Classifier effectively identified frauds in imbalanced datasets with 96% accuracy.</p>
+          <li class="project-item active" data-filter-item data-category="data science">
+            <a href="https://github.com/ShikharSrivastava-aiml" target="_blank">
+              <figure class="project-img">
+                <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                <img src="./assets/images/project-3.jpg" alt="Insurance Fraud Detection" loading="lazy">
+              </figure>
+              <h3 class="project-title">Insurance Fraud Detection</h3>
+              <p class="project-category">Designed an RUSBoost Classifier to tackle imbalanced datasets, achieving 96% fraud detection accuracy.</p>
+            </a>
           </li>
         </ul>
       </article>
