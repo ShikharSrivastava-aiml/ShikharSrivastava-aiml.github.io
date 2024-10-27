@@ -65,6 +65,9 @@ const filterBtn = document.querySelectorAll("[data-filter-btn]");
 select.addEventListener("click", function () {
     elementToggleFunc(this);
 });
+function elementToggleFunc(element) {
+    element.classList.toggle('active'); // Adjust this to your own CSS class
+}
 // Add event to all select items
 for (let i = 0; i < selectItems.length; i++) {
     selectItems[i].addEventListener("click", function () {
