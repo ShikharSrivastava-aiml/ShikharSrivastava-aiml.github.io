@@ -55,45 +55,45 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
-// custom select variables
+// Custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
+// Toggle function for the dropdown
+select.addEventListener("click", function () {
+    elementToggleFunc(this);
+});
+// Add event to all select items
 for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+    selectItems[i].addEventListener("click", function () {
+        // Get the selected value, convert to lower case
+        let selectedValue = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        elementToggleFunc(select);
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
+        // Filter the projects based on selected category
+        filterFunc(selectedValue);
+    });
 }
 
-// filter variables
+// Filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
+    // Get the categories for the current filter item
+    const itemCategories = filterItems[i].dataset.category.toLowerCase().split(" ");
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
+    // Check if "all" is selected or if the item belongs to the selected category
+    if (selectedValue === "all" || itemCategories.includes(selectedValue)) {
+      filterItems[i].classList.add("active"); // Show item
     } else {
-      filterItems[i].classList.remove("active");
+      filterItems[i].classList.remove("active"); // Hide item
     }
-
   }
-
 }
-
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
@@ -112,7 +112,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
-
 
 
 // contact form variables
